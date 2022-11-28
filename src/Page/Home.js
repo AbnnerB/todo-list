@@ -63,42 +63,62 @@ export default function Home() {
   }
 
   return (
-    <div className="containerHome">
-      <h1 className="titleNotes">ANOTAÇÕES</h1>
-      <div className="inputButton">
-        <input
-          type="text"
-          maxLength="40"
-          placeholder="Digite aqui..."
-          value={texts}
-          onChange={(e) => setTexts(e.target.value)}
-          autoFocus
-        />
-        <button onClick={addTodo}>
-          <AiFillPlusCircle />
-        </button>
-      </div>
+    <div className="containerAll">
+      <div className="containerHome">
+        <h1 className="titleNotes">ANOTAÇÕES</h1>
 
-      <div className="containerLista">
-        {/* <h1 className="titleNotes">ANOTAÇÕES</h1> */}
+        <div className="inputButton">
+          <input
+            type="text"
+            maxLength="40"
+            placeholder="Digite aqui..."
+            value={texts}
+            onChange={(e) => setTexts(e.target.value)}
+            autoFocus
+          />
 
-        {arrayTodo.map((item, index) => (
-          <div key={index} className="lista">
-            <span>
-              <button>
-                <AiOutlineCheckCircle />
+          <button onClick={addTodo}>
+            <AiFillPlusCircle />
+          </button>
+        </div>
+        <div className="containerLista">
+          {arrayTodo.map((item, index) => (
+            <div key={index} className="lista">
+              <span>
+                <button>
+                  <AiOutlineCheckCircle />
+                </button>
+                {item.text}
+              </span>
+              <button
+                className="buttonDelete"
+                onClick={() => deleteItem(item.id)}
+              >
+                <AiFillDelete />
               </button>
-              {item.text}
-            </span>
-            <button
-              className="buttonDelete"
-              onClick={() => deleteItem(item.id)}
-            >
-              <AiFillDelete />
-            </button>
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
+
+      <footer>
+        <p>
+          <span className="signature">Ass: Abnner Borges</span>
+        </p>
+        <div className="linksRefIcon">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://icons8.com/icon/lNIaXGUuT4qe/notes"
+          >
+            <span> Icone </span>
+          </a>
+          retirado do site
+          <a target="_blank" rel="noreferrer" href="https://icons8.com">
+            <span> Icons8 </span>
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }

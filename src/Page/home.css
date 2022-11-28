@@ -2,10 +2,21 @@
 fazer uma classe pra quando o exercicio estiver concluido
       text-decoration: line-through;
 */
+.containerAll {
+  display: flex;
+  flex-direction: column;
+  /* background-color: antiquewhite; */
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+}
 
 .containerHome {
   width: 500px;
   margin: 0 auto;
+
+  /* display: flex;
+  flex-direction: column; */
 }
 .inputButton {
   display: flex;
@@ -18,7 +29,8 @@ fazer uma classe pra quando o exercicio estiver concluido
   border: none;
   border-radius: 14px;
   font-size: 1.3rem;
-  background-color: rgb(255, 244, 230);
+  background-color: antiquewhite;
+  color: #4e3001;
   padding-left: 1rem;
 }
 .inputButton button {
@@ -101,4 +113,35 @@ fazer uma classe pra quando o exercicio estiver concluido
 .lista span button:hover,
 .inputButton button:hover {
   transform: scale(1.2);
+}
+
+footer {
+  padding: 1rem;
+  margin-top: 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: rgb(148, 102, 42); */
+  color: #ffffff;
+  font-size: 1.3em;
+}
+
+.signature {
+  font-size: 1.4em;
+  font-family: "Dancing Script", cursive;
+}
+
+.linksRefIcon {
+  /* font-size: 0.45em; */
+  font-size: 0.39em;
+  font-family: cursive;
+  position: absolute;
+  top: 0;
+  right: 4px;
+  color: rgb(177, 117, 38);
+}
+
+.linksRefIcon a {
+  color: rgb(177, 117, 38);
+  text-decoration: none;
 }
