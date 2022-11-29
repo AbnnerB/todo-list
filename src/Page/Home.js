@@ -28,14 +28,14 @@ export default function Home() {
 
   function addTodo() {
     if (texts.length < 1) {
-      alert("Digite alguma coisa ");
+      alert("Preencha o campo de texto...");
       return;
     }
 
     const todoObj = {
       id: id,
       text: texts,
-      checkedButton: true,
+      checkedButton: false,
     };
     setId(id + 1);
 
@@ -69,13 +69,13 @@ export default function Home() {
 
   return (
     <div className="containerAll">
-      <div className="containerHome">
+      <div className="containerMainContent">
         <h1 className="titleNotes">ANOTAÇÕES</h1>
 
         <div className="inputButton">
           <input
             type="text"
-            maxLength="40"
+            maxLength="20"
             placeholder="Digite aqui..."
             value={texts}
             onChange={(e) => setTexts(e.target.value)}
@@ -86,19 +86,28 @@ export default function Home() {
             <AiFillPlusCircle />
           </button>
         </div>
-        <div className="containerLista">
+        <div className="containerList">
           {arrayTodo.map((item, index) => (
             <div key={index} className="lista">
               <span>
-                <button onClick={() => completeTask(item.id)}>
+                <button
+                  className="buttonChecked"
+                  onClick={() => completeTask(item.id)}
+                >
                   {item.checkedButton ? (
-                    <BsCheckCircle />
-                  ) : (
                     <BsCheckCircleFill />
+                  ) : (
+                    <BsCheckCircle />
                   )}
-                  {/* <AiOutlineCheckCircle /> */}
                 </button>
-                <span className={item.checkedButton ? "" : "textTodoList"}>
+                <span
+                  className="textTodoList"
+                  style={
+                    item.checkedButton
+                      ? { textDecoration: "line-through" }
+                      : { textDecoration: "none" }
+                  }
+                >
                   {item.text}
                 </span>
               </span>
@@ -114,9 +123,7 @@ export default function Home() {
       </div>
 
       <footer>
-        <p>
-          <span className="signature">Ass: Abnner Borges</span>
-        </p>
+        <p className="signature">Ass: Abnner Borges</p>
         <div className="linksRefIcon">
           <a
             target="_blank"
@@ -125,7 +132,7 @@ export default function Home() {
           >
             <span> Icone </span>
           </a>
-          retirado do site
+          da pagina retirado do site
           <a target="_blank" rel="noreferrer" href="https://icons8.com">
             <span> Icons8 </span>
           </a>

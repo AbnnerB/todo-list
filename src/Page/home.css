@@ -1,22 +1,14 @@
-/* 
-fazer uma classe pra quando o exercicio estiver concluido
-      text-decoration: line-through;
-*/
 .containerAll {
   display: flex;
   flex-direction: column;
-  /* background-color: antiquewhite; */
   justify-content: space-between;
   min-height: 100vh;
   width: 100%;
 }
 
-.containerHome {
+.containerMainContent {
   min-width: 500px;
   margin: 0 auto;
-
-  /* display: flex;
-  flex-direction: column; */
 }
 .inputButton {
   display: flex;
@@ -35,7 +27,6 @@ fazer uma classe pra quando o exercicio estiver concluido
 }
 .inputButton button {
   cursor: pointer;
-  /* width: 10%; */
   display: flex;
   justify-content: flex-end;
   background-color: transparent;
@@ -43,16 +34,12 @@ fazer uma classe pra quando o exercicio estiver concluido
   color: rgb(122, 78, 11);
   font-size: 2.2rem;
   transition: transform 0.4s;
-  /* outline: 1px solid rgb(163, 163, 163); */
 }
 
-.containerLista {
+.containerList {
   margin-top: 30px;
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .titleNotes {
@@ -71,7 +58,6 @@ fazer uma classe pra quando o exercicio estiver concluido
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
   background-color: rgb(148, 102, 42);
   box-shadow: 2px 2px 10px rgb(5, 5, 4);
   color: white;
@@ -84,9 +70,8 @@ fazer uma classe pra quando o exercicio estiver concluido
   align-items: center;
   gap: 0.9rem;
   flex-wrap: wrap;
-  width: 90%;
 }
-.lista span button {
+.buttonChecked {
   color: #fff;
   background-color: transparent;
   border: none;
@@ -94,14 +79,6 @@ fazer uma classe pra quando o exercicio estiver concluido
   display: flex;
   cursor: pointer;
   transition: transform 0.4s;
-
-  /* color: yellowgreen; */
-  /* Prentendo adicionar essa cor, quando o usario apertar*/
-}
-
-.textTodoList {
-  /* color: yellowgreen; */
-  text-decoration: line-through;
 }
 
 .buttonDelete {
@@ -126,7 +103,6 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: rgb(148, 102, 42); */
   color: #ffffff;
   font-size: 1.3em;
 }
@@ -138,7 +114,6 @@ footer {
 }
 
 .linksRefIcon {
-  /* font-size: 0.45em; */
   font-size: 0.39em;
   font-family: cursive;
   position: absolute;
@@ -150,4 +125,65 @@ footer {
 .linksRefIcon a {
   color: rgb(177, 117, 38);
   text-decoration: none;
+}
+
+@media screen and (max-width: 540px) {
+  .containerMainContent {
+    min-width: 95%;
+    max-width: 95%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .textTodoList,
+  .buttonDelete,
+  .buttonChecked {
+    font-size: 1.3rem;
+  }
+  .inputButton input {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .textTodoList,
+  .buttonDelete,
+  .buttonChecked {
+    font-size: 1.18rem;
+  }
+  .titleNotes {
+    font-size: 1.7rem;
+  }
+  .inputButton input {
+    width: 85%;
+    font-size: 1rem;
+  }
+  .inputButton button {
+    font-size: 1.8em;
+  }
+}
+@media screen and (max-width: 300px) {
+  .textTodoList,
+  .buttonDelete,
+  .buttonChecked {
+    font-size: 1rem;
+  }
+  .signature {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 260px) {
+  .textTodoList,
+  .buttonDelete,
+  .buttonChecked {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 240px) {
+  .textTodoList,
+  .buttonDelete,
+  .buttonChecked {
+    font-size: 0.7rem;
+  }
+  .inputButton input {
+    padding-right: 1rem;
+  }
 }
