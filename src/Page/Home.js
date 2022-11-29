@@ -26,6 +26,12 @@ export default function Home() {
     setId(lastId + 1 || 0);
   }, []);
 
+  function addTodoWithEnter(event) {
+    if (event.key === "Enter") {
+      addTodo();
+    }
+  }
+
   function addTodo() {
     if (texts.length < 1) {
       alert("Preencha o campo de texto...");
@@ -80,6 +86,7 @@ export default function Home() {
             value={texts}
             onChange={(e) => setTexts(e.target.value)}
             autoFocus
+            onKeyPress={addTodoWithEnter}
           />
 
           <button onClick={addTodo}>
