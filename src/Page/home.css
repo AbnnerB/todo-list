@@ -99,6 +99,11 @@ fazer uma classe pra quando o exercicio estiver concluido
   /* Prentendo adicionar essa cor, quando o usario apertar*/
 }
 
+.textTodoList {
+  /* color: yellowgreen; */
+  text-decoration: line-through;
+}
+
 .buttonDelete {
   color: #fff;
   background-color: transparent;
@@ -129,6 +134,7 @@ footer {
 .signature {
   font-size: 1.4em;
   font-family: "Dancing Script", cursive;
+  text-decoration: underline;
 }
 
 .linksRefIcon {

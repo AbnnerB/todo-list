@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-
 import "./home.css";
 
-import {
-  AiFillDelete,
-  AiFillPlusCircle,
-  AiOutlineCheckCircle,
-} from "react-icons/ai";
+import { AiFillDelete, AiFillPlusCircle } from "react-icons/ai";
+import { BsCheckCircle, BsCheckCircleFill } from "react-icons/bs";
 
 export default function Home() {
   const [texts, setTexts] = useState("");
@@ -62,6 +58,17 @@ export default function Home() {
     console.log(arrayTodo);
   }
 
+  function completeTask(id) {
+    let mappingTask = arrayTodo.map((todo) => {
+      if (todo.id === id) {
+        todo.checkedButton = !todo.checkedButton;
+      }
+      return todo;
+    });
+    setArrayTodo(mappingTask);
+    localStorage.setItem("arrayTodo", JSON.stringify(mappingTask));
+  }
+
   return (
     <div className="containerAll">
       <div className="containerHome">
@@ -85,10 +92,17 @@ export default function Home() {
           {arrayTodo.map((item, index) => (
             <div key={index} className="lista">
               <span>
-                <button>
-                  <AiOutlineCheckCircle />
+                <button onClick={() => completeTask(item.id)}>
+                  {item.checkedButton ? (
+                    <BsCheckCircle />
+                  ) : (
+                    <BsCheckCircleFill />
+                  )}
+                  {/* <AiOutlineCheckCircle /> */}
                 </button>
-                {item.text}
+                <span className={item.checkedButton ? "" : "textTodoList"}>
+                  {item.text}
+                </span>
               </span>
               <button
                 className="buttonDelete"
