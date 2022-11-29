@@ -36,8 +36,6 @@ export default function Home() {
       id: id,
       text: texts,
       checkedButton: true,
-      valor: 0,
-      quant: 1,
     };
     setId(id + 1);
 
