@@ -94,7 +94,7 @@ export default function Home() {
         <div className="inputButton">
           <input
             type="text"
-            maxLength="100"
+            maxLength="200"
             placeholder="Digite aqui..."
             value={texts}
             onChange={(e) => setTexts(e.target.value)}
