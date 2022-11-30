@@ -28,7 +28,6 @@
 .inputButton button {
   cursor: pointer;
   display: flex;
-  justify-content: flex-end;
   background-color: transparent;
   border: none;
   color: rgb(122, 78, 11);
@@ -53,10 +52,12 @@
 
 .lista {
   width: 100%;
+  max-width: 500px;
   border-radius: 10px;
   padding: 0.4rem 0.8rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   background-color: rgb(148, 102, 42);
   box-shadow: 2px 2px 10px rgb(5, 5, 4);
@@ -65,11 +66,11 @@
   font-size: 1.5rem;
 }
 
-.lista span {
+.checkedContent {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
   flex-wrap: wrap;
+  gap: 0.9rem;
 }
 .buttonChecked {
   color: #fff;
@@ -79,6 +80,13 @@
   display: flex;
   cursor: pointer;
   transition: transform 0.4s;
+}
+
+.textTodoList {
+  height: auto;
+  overflow-y: auto;
+  max-width: 300px;
+  white-space: nowrap;
 }
 
 .buttonDelete {
@@ -159,6 +167,9 @@ footer {
   .inputButton button {
     font-size: 1.8em;
   }
+  .textTodoList {
+    max-width: 230px;
+  }
 }
 @media screen and (max-width: 300px) {
   .textTodoList,
@@ -176,6 +187,9 @@ footer {
   .buttonChecked {
     font-size: 0.9rem;
   }
+  .textTodoList {
+    max-width: 180px;
+  }
 }
 @media screen and (max-width: 240px) {
   .textTodoList,
@@ -185,5 +199,13 @@ footer {
   }
   .inputButton input {
     padding-right: 1rem;
+  }
+}
+@media screen and (max-width: 240px) {
+  .textTodoList {
+    max-width: 130px;
+  }
+  .titleNotes {
+    font-size: 1.4em;
   }
 }

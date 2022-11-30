@@ -59,7 +59,6 @@ export default function Home() {
     setArrayTodo(filtered);
 
     localStorage.setItem("arrayTodo", JSON.stringify(filtered));
-    console.log(arrayTodo);
   }
 
   function completeTask(id) {
@@ -75,13 +74,27 @@ export default function Home() {
 
   return (
     <div className="containerAll">
+      <article className="linksRefIcon">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://icons8.com/icon/lNIaXGUuT4qe/notes"
+        >
+          <span> Icone </span>
+        </a>
+        do titulo retirado do site
+        <a target="_blank" rel="noreferrer" href="https://icons8.com">
+          <span> Icons8 </span>
+        </a>
+      </article>
+
       <div className="containerMainContent">
         <h1 className="titleNotes">ANOTAÇÕES</h1>
 
         <div className="inputButton">
           <input
             type="text"
-            maxLength="20"
+            maxLength="100"
             placeholder="Digite aqui..."
             value={texts}
             onChange={(e) => setTexts(e.target.value)}
@@ -96,7 +109,7 @@ export default function Home() {
         <div className="containerList">
           {arrayTodo.map((item, index) => (
             <div key={index} className="lista">
-              <span>
+              <span className="checkedContent">
                 <button
                   className="buttonChecked"
                   onClick={() => completeTask(item.id)}
@@ -107,7 +120,7 @@ export default function Home() {
                     <BsCheckCircle />
                   )}
                 </button>
-                <span
+                <p
                   className="textTodoList"
                   style={
                     item.checkedButton
@@ -116,7 +129,7 @@ export default function Home() {
                   }
                 >
                   {item.text}
-                </span>
+                </p>
               </span>
               <button
                 className="buttonDelete"
@@ -131,19 +144,6 @@ export default function Home() {
 
       <footer>
         <p className="signature">Ass: Abnner Borges</p>
-        <div className="linksRefIcon">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://icons8.com/icon/lNIaXGUuT4qe/notes"
-          >
-            <span> Icone </span>
-          </a>
-          da pagina retirado do site
-          <a target="_blank" rel="noreferrer" href="https://icons8.com">
-            <span> Icons8 </span>
-          </a>
-        </div>
       </footer>
     </div>
   );
